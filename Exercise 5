@@ -1,0 +1,34 @@
+import sys,re
+print('This program plots a circle and square and prints out its area:')
+import numpy as np
+PI=np.pi
+
+radius=float(input('enter radius of circle:'))
+
+import pylab as pl
+print('Drawing the circle:')
+x=np.linspace(-radius,radius,100)
+pl.subplot(2,2,1)
+pl.plot(x,np.sqrt(radius**2-x**2),lw=2.0, label='UPPER')
+pl.plot(x,-np.sqrt(radius**2-x**2),lw=2.0, label='LOWER')
+pl.legend()
+area_circ=PI*radius**2
+print(f'Area of the circle with radius {radius} is',area_circ)
+
+#square
+pl.subplot(2,2,2)
+side=float(input('enter side of square : '))
+print('Drawing the square ')
+x=np.linspace(0,side,25)
+zeros=np.zeros(25)
+ones=np.ones(25)
+side_value=ones*side
+
+pl.plot(x,zeros,lw=2.0,label='L1')
+pl.plot(zeros,x,lw=2.0,label='L2')
+pl.plot(x,side_value,lw=2.0,label='L3')
+pl.plot(side_value,x,lw=2.0,label='L4')
+area_sq=side**2
+print(f'Area of square rectangle for side {side} is : ',area_sq)
+pl.legend()
+pl.show()
