@@ -1,0 +1,26 @@
+import numpy as np
+import random
+sides_length_inpute={'Length':30,'Breadth':20,'Height':15}
+def sides_length(sides_length_inpute):
+    lengths=[]
+    for i in sides_length_inpute.values():
+        lengths.append(i)
+    return lengths
+sides_length=sides_length(sides_length_inpute)
+sides_length.sort()
+
+sides_length.sort()
+area=[]
+def Area_of_large_side(sides_length):
+    for i in sides_length[:-1]:
+        for j in sides_length:
+            area.append(i*j)
+    return max(area)
+
+def volume_of_rectangular_cuboid(sides_length):
+    volume=np.product(sides_length)
+    return (volume)
+print('Maximum side area of Rectangular cuboid ',Area_of_large_side(sides_length))
+print('volume of Rectangular cuboid ',volume_of_rectangular_cuboid(sides_length))
+Maximum side area of Rectangular cuboid  600
+volume of Rectangular cuboid  9000
